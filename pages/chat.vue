@@ -13,7 +13,11 @@
         <main class="bg-purple-200 col-span-2 flex flex-col justify-between">
             <div class="space-y-2 p-2 text-blue-800">
                 
-                {{ mensagem }}
+                <div class="w-full flex justify-end">
+                    <div class="self">
+                        {{ mensagem }}
+                    </div>
+                </div>
 
                 <div v-for="message in mensagens" class="w-full flex justify-end">
                     <div class="self">
