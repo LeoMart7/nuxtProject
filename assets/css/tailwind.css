@@ -1,3 +1,9 @@
 @tailwind base;
+
+body{
+    background-color: rgb(197, 184, 197)
+
+}
+
 @tailwind components;
 @tailwind utilities;
