@@ -13,9 +13,11 @@
         <main class="bg-purple-200 col-span-2 flex flex-col justify-between">
             <div class="space-y-2 p-2 text-blue-800">
                 
-                <div class="w-full flex justify-end">
+                {{ mensagem }}
+
+                <div v-for="message in mensagens" class="w-full flex justify-end">
                     <div class="self">
-                        <p>mensagem 1</p>
+                        <p>{{ message.content }}</p>
                     </div>
                 </div>
 
@@ -40,7 +42,7 @@
             </div>
 
             <div class=" bg-blue-600">
-                <input class="rounded-lg border-gray-500 border w-full p-2 m-1" type="text">
+                <input v-model="mensagem" class="rounded-lg border-gray-500 border w-full p-2 m-1" type="text">
             </div>
 
         </main>
@@ -53,6 +55,16 @@ const sayHello = () => {
     alert("Hello wolrd!!")
 }
 
+const mensagem = ref('') 
+
+const mensagens = ref([
+    {
+        content:'Olá!'
+    },
+    {
+        content:'Oi!'
+    }
+])
 
 </script>
 
