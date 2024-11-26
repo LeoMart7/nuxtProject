@@ -3,21 +3,21 @@
         <aside class="border-blue-900 border col-span-1 bg-blue-600 text-blue-800">
 
             <ul>
-                <li @click="sayHello">Leo Moura</li>
-                <li>Renata Marinho</li>
-                <li>Nathala Franco</li>
-                <li>Helenice Mota</li>
+                <li @click="selectUser('Leo Moura')">Leo Moura</li>
+                <li @click="selectUser('Renata Marinho')">Renata Marinho</li>
+                <li @click="selectUser('Nathala Franco')">Nathala Franco</li>
+                <li @click="selectUser('Helenice Mota')">Helenice Mota</li>
             </ul>
 
         </aside>
         <main class="bg-purple-200 col-span-2 flex flex-col justify-between">
             <div class="space-y-2 p-2 text-blue-800">
                 
-                <div class="w-full flex justify-end">
-                    <div class="self">
-                        {{ mensagem }}
+               <div @click="selectUser" class="w-full flex justify-end">
+                    <div class="self" >
+                        {{ userSelecionado }}
                     </div>
-                </div>
+               </div>
 
                 <div v-for="message in mensagens" class="w-full flex justify-end">
                     <div class="self">
@@ -31,22 +31,13 @@
                     </div>
                 </div>
 
-                <div class="w-full flex justify-end">
-                    <div class="self">
-                    <p>mensagem 3</p>
-                    </div>
-                </div>
-
-                <div class="w-full flex justify-start">
-                    <div class="other">
-                        <p>mensagem 4</p>
-                    </div>
-                </div>
+                
 
             </div>
 
             <div class=" bg-blue-600">
-                <input v-model="mensagem" class="rounded-lg border-gray-500 border w-full p-2 m-1" type="text">
+                <UInput v-model="value"/>
+                
             </div>
 
         </main>
@@ -55,11 +46,16 @@
 
 <script setup>
 
+const userSelecionado = ref(null);
+
+const selectUser = (user) => {
+    userSelecionado.value = user;
+}
+
+
 const sayHello = () => {
     alert("Hello wolrd!!")
 }
-
-const mensagem = ref('') 
 
 const mensagens = ref([
     {
