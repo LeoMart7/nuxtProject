@@ -38,7 +38,7 @@ const mensagens = ref([])
 const onlineUsers = ref([
     {
         id: 1,
-        image: 'https://i.pravatar.cc/100?img=7',
+        image: 'https://i.pravatar.cc/100?img=13',
         name: "Leo Moura"
     },
     {
